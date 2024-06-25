@@ -1,0 +1,20 @@
+<div class="container mx-auto p-4 bg-gray-100 rounded shadow-md">
+  <div class="flex justify-between items-center mb-4">
+    <div>
+      <h2 class="text-lg leading-6 font-medium text-gray-900">Personas</h2>
+    </div>
+    <app-button
+      (clicked)="navigate(['/dashboard/person/create'])"
+      [label]="'Crear usuario'"
+      [class]="
+        'bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+      "
+    >
+    </app-button>
+  </div>
+  <app-table [columns]="columns" [data]="users"></app-table>
+  <app-pagination
+    [total]="100"
+    (changePage)="onChangePage($event)"
+  ></app-pagination>
+</div>
